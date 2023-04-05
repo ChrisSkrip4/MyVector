@@ -1,0 +1,15 @@
+#Ignore catalog '.vs'
+.vs/
+
+#Ignore catalog 'Debug'
+Debug/
+
+#Ignore catalog 'x64'
+x64/
+
+#Ignore catalog 'MyVector/Debug'
+MyVector/Debug/
+
+#Ignore catalog 'MyVector/x64'
+MyVector/x64
+
