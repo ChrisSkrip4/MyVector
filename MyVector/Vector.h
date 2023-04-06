@@ -52,7 +52,7 @@ namespace MyVector
 			void pop_back();
 			void clear();
 			void insert(const size_t index, const T value);
-			T* insert(const T* iter, const T value);
+			T* insert(const T* iter_position, const T value);
 			void erase(const size_t index);
 			T* erase(const T* iter);
 			//void swap(Vector& vector);

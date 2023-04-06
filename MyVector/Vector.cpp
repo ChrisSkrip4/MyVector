@@ -209,10 +209,10 @@ void Vector<T>::resize(size_t newsize)
 		size_t capacity = newsize * 2;
 		T* result = new T[capacity];
 
-		for (int i = 0; i < m_size; ++i)
+		for (size_t i = 0; i < m_size; ++i)
 			result[i] = m_data[i];
 
-		for (int i = m_size; i < newsize; ++i)
+		for (size_t i = m_size; i < newsize; ++i)
 			result[i] = 0;
 
 		delete[] m_data;
@@ -325,9 +325,9 @@ void Vector<T>::insert(const size_t index, const T value)
 }
 
 template<typename T>
-T* Vector<T>::insert(const T* iter, const T value)
+T* Vector<T>::insert(const T* iter_position, const T value)
 {
-	size_t position = iter - m_data;
+	size_t position = iter_position - m_data;
 
 	if (m_size != 0)
 	{
