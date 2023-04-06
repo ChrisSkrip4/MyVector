@@ -1,11 +1,13 @@
 ﻿#include <iostream>
 #include "Vector.h"
  
+
+
 using namespace MyVector;
 
 int main()
 {
-	Vector<int> vec1{1,2};
+	/*Vector<int> vec1{1,2};
 	Vector<int> vec2 { 7, 8, 9, 4, 5 };
 
 
@@ -36,5 +38,24 @@ int main()
 	std::cout << "vec1 size = " << vec1.size() << std::endl;;
 	std::cout << "vec2 size = " << vec2.size();
 
+	*/
+
+
+	/*Vector <double> v_d(4);
+
+	for (auto x : v_d) {
+		std::cout << x << " ";
+	} std::cout << std::endl;
+
+	v_d.push_back(5.7);
+
+	for (size_t i = 0; i < v_d.size(); i++) {
+		std::cout << v_d[i] << " ";
+	}std::cout << std::endl;
+
+	for (auto x : v_d) {
+		std::cout << x << " ";
+	} std::cout << std::endl;
+	*/
 
 }

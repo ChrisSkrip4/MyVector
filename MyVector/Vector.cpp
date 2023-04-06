@@ -62,11 +62,15 @@ Vector<T>::Vector(const Vector& vector) :
 }
 
 template<typename T>
-Vector<T>::Vector(Vector&& vector) noexcept:
-	Vector(vector.size())
+Vector<T>::Vector(Vector&& vector) noexcept
 {
+	m_size = vector.m_size;
+	m_capacity = vector.m_capacity;
+	m_data = vector.m_data;
+
 	vector.m_capacity = 0;
 	vector.m_size = 0;
+	vector.m_data = nullptr;
 }
 
 template<typename T>
