@@ -50,9 +50,9 @@ template<typename T>
 Vector<T>::Vector(const Vector& vector) :
 	Vector(vector.size())
 {
-	if (vector.m_size)
+	if (vector.m_data)
 	{
-		for (int i = 0; i < m_size; i++)
+		for (size_t i = 0; i < m_size; i++)
 		{
 			m_data[i] = vector.m_data[i];
 		}
@@ -104,14 +104,17 @@ Vector<T>& Vector<T>:: operator= (const Vector& vector)
 
 	delete[] m_data;
 
+	m_size = vector.m_size;
+	m_capacity = vector.m_capacity;
+
 	if (vector.m_data)
 	{
 		m_data = new T[m_capacity];
-		for (int i = 0; i < m_size; ++i)
+		for (size_t i = 0; i < m_size; i++)
 			m_data[i] = vector.m_data[i];
 	}
 	else
-		m_data = 0;
+		m_data = nullptr;
 
 	return *this;
 
@@ -130,7 +133,6 @@ Vector<T>& Vector<T>:: operator= (Vector&& vector) noexcept
 	vector.m_capacity = 0;
 	vector.m_size = 0;
 	vector.m_data = nullptr;
-
 
 	return *this;
 }
